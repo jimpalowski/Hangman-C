@@ -1,0 +1,30 @@
+<pre>   _________________</pre>
+<pre>  /\                 |</pre>
+<pre>  \/                 |</pre>
+<pre>   |                 |</pre>
+<pre>-------              |</pre>
+<pre>   |                 |</pre>
+<pre>   |                 |</pre>
+<pre>   /\                |</pre>
+<pre>  /  \               |</pre>
+<pre>                     |</pre>
+<pre>                  ___|______</pre>
+
+@for(int i = 0; i < @Model.GetWord().Length; i++)
+{
+  <span>@Model.GetWordMatched()[i]&ensp;</span>
+}
+<br>
+<br>
+<form action="guess" method="post">
+  <label for="guess">Pick a letter</label>
+  <input type="text" name="guess" id="guess" maxlength="1">
+  <button type="submit" class="btn"></button>
+
+  <h5>Former Guesses</h5>
+  @for(int i = 0; i < @Model.FormerGuesses().Count; i++)
+  {
+    @(Model.FormerGuesses()[i] + " - ");
+  }
+
+</form>
